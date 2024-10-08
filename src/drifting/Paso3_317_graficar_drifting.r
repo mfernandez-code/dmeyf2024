@@ -100,7 +100,7 @@ graficar_drift <- function(campo, pmes0, pmes1) {
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 # Aqui comienza el programa
-setwd("~/buckets/b1/") # Establezco el Working Directory
+setwd("C:/Users/maguf/OneDrive/Documentos/datamining2024") # Establezco el Working Directory
 
 
 # cargo dataset

@@ -6,7 +6,6 @@
 rm(list = ls()) # remove all objects
 gc() # garbage collection
 
-##
 require("data.table")
 
 # Parametros del script
@@ -21,7 +20,7 @@ PARAM$experimento <- "CA7050"
 
 # copio si hace falta el dataset
 
-setwd("~/buckets/b1/")
+setwd("C:/Users/maguf/OneDrive/Documentos/datamining2024")
 
 # cargo el dataset
 dataset <- fread(PARAM$dataset) # donde entreno
