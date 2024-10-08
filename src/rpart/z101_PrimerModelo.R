@@ -7,7 +7,7 @@ require("rpart")
 require("rpart.plot")
 
 # Aqui se debe poner la carpeta de la materia de SU computadora local
-setwd("~/buckets/b1") # Establezco el Working Directory
+setwd("C:/Users/maguf/OneDrive/Documentos/datamining2024") # Establezco el Working Directory
 
 # cargo el dataset que tiene la clase calculada !
 dataset <- fread("./datasets/competencia_01.csv")
@@ -55,7 +55,7 @@ dapply[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
 
 # genero el archivo para Kaggle
 # primero creo la carpeta donde va el experimento
-dir.create("./exp/")
+#dir.create("./exp/")
 dir.create("./exp/KA2001")
 
 # solo los campos para Kaggle
