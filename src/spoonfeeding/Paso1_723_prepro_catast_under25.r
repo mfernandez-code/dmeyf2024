@@ -259,7 +259,7 @@ tb_indices$foto_mes <- vfoto_mes
 
 tb_indices
 
-setwd("~/buko222/") # Establezco el Working Directory
+setwd("~/buckets/b1/") # Establezco el Working Directory
 
 # cargo el dataset donde voy a entrenar el modelo
 dataset <- fread(PARAM$input$dataset)
