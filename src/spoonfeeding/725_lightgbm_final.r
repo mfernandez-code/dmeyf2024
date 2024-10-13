@@ -26,7 +26,7 @@ options(error = function() {
 #  muy pronto esto se leera desde un archivo formato .yaml
 PARAM <- list()
 PARAM$experimento_data <- "PP7230"
-PARAM$experimento_bayesiana <- "HT7240"
+PARAM$experimento_bayesiana <- "HT7340"
 
 PARAM$experimento <- "KA7250"
 
