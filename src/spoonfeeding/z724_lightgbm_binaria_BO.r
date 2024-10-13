@@ -36,7 +36,7 @@ PARAM <- list()
 PARAM$experimento_data <- "PP7230"
 PARAM$experimento <- "HT7240"
 
-PARAM$semilla_azar <- 102191 # Aqui poner su  primer  semilla
+PARAM$semilla_azar <- 990211 # Aqui poner su  primer  semilla
 
 PARAM$hyperparametertuning$POS_ganancia <- 273000
 PARAM$hyperparametertuning$NEG_ganancia <- -7000
@@ -278,7 +278,7 @@ action_limitar_memoria( 4 )
 setwd("~/buckets/b1/exp/") # Establezco el Working Directory
 
 # cargo el dataset donde voy a entrenar el modelo
-dataset <- fread(paste0(PARAM$experimento_data,"/dataset.csv.gz"))
+dataset <- fread(paste0(PARAM$experimento_data,"/dataset_enorme.csv.gz"))
 
 
 # creo la carpeta donde va el experimento
