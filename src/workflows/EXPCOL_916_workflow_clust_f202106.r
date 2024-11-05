@@ -428,7 +428,7 @@ wf_junio <- function( pnombrewf )
   param_local <- exp_wf_init( pnombrewf ) # linea workflow inicial fija
 
   # Etapa especificacion dataset de la Segunda Competencia Kaggle
-  DT_incorporar_dataset( "~/buckets/b1/datasets/competencia_02.csv.gz")
+  DT_incorporar_dataset( "~/buckets/b1/datasets/competencia_02_clust.csv.gz")
 
   # Etapas preprocesamiento
   CA_catastrophe_base( metodo="MachineLearning")
@@ -449,7 +449,7 @@ wf_junio <- function( pnombrewf )
   ht <- HT_tuning_base( bo_iteraciones = 40 )  # iteraciones inteligentes
 
   # Etapas finales
-  fm <- FM_final_models_lightgbm( c(ht, ts6), ranks=c(1), qsemillas=5 )
+  fm <- FM_final_models_lightgbm( c(ht, ts6), ranks=c(1), qsemillas=20 )
   SC_scoring( c(fm, ts6) )
   EV_evaluate_conclase_gan() # evaluacion contra mes CON clase
 
