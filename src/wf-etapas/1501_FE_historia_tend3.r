@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-cat( "ETAPA  z1501_FE_historia.r  INIT\n")
+cat( "ETAPA  1501_FE_historia_tend3.r  INIT\n")
 
 # Workflow  Feature Engineering historico
 
@@ -332,6 +332,25 @@ if (envg$PARAM$Tendencias2$run) {
   GrabarOutput()
 }
 
+
+cols_lagueables <- intersect(cols_lagueables, colnames(dataset))
+if (envg$PARAM$Tendencias3$run) {
+  envg$OUTPUT$TendenciasYmuchomas3$ncol_antes <- ncol(dataset)
+  TendenciaYmuchomas(dataset,
+                     cols = cols_lagueables,
+                     ventana = envg$PARAM$Tendencias3$ventana, # 6 meses de historia
+                     tendencia = envg$PARAM$Tendencias3$tendencia,
+                     minimo = envg$PARAM$Tendencias3$minimo,
+                     maximo = envg$PARAM$Tendencias3$maximo,
+                     promedio = envg$PARAM$Tendencias3$promedio,
+                     ratioavg = envg$PARAM$Tendencias3$ratioavg,
+                     ratiomax = envg$PARAM$Tendencias3$ratiomax
+  )
+  
+  envg$OUTPUT$TendenciasYmuchomas3$ncol_despues <- ncol(dataset)
+  GrabarOutput()
+}
+
 #------------------------------------------------------------------------------
 # grabo el dataset
 cat( "grabado dataset\n")
@@ -381,4 +400,4 @@ GrabarOutput()
 #  archivos tiene a los files que debo verificar existen para no abortar
 
 action_finalizar( archivos = c("dataset.csv.gz","dataset_metadata.yml")) 
-cat( "ETAPA  z1501_FE_historia.r  END\n")
+cat( "ETAPA  1501_FE_historia_tend3.r  END\n")
