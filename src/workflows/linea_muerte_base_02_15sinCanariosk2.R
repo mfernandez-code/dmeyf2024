@@ -4,6 +4,26 @@ format(Sys.time(), "%a %b %d %X %Y")
 rm(list = ls(all.names = TRUE)) # remove all objects
 gc(full = TRUE, verbose= FALSE) # garbage collection
 
+require("rlang")
+require("yaml")
+require("data.table")
+envg$EXPENV <- list()
+envg$EXPENV$bucket_dir <- "~/buckets/b1"
+envg$EXPENV$exp_dir <- "~/buckets/b1/expw333/"
+envg$EXPENV$wf_dir <- "~/buckets/b1/flow333/"
+envg$EXPENV$repo_dir <- "~/dmeyf2024/"
+envg$EXPENV$datasets_dir <- "~/buckets/b1/datasets/"
+envg$EXPENV$messenger <- "~/install/zulip_enviar.sh"
+# cargo las  "librerias" mlog y exp_lib
+dir.create( envg$EXPENV$exp_dir, showWarnings = FALSE)
+dir.create( envg$EXPENV$wf_dir, showWarnings = FALSE)
+
+mlog <- paste0( envg$EXPENV$repo_dir,"/src/lib/mlog.r")
+source( mlog )
+
+exp_lib <- paste0( envg$EXPENV$repo_dir,"/src/lib/exp_lib.r")
+source( exp_lib )
+
 dir.create("~/buckets/b1/exp/lineademuerte/", showWarnings = FALSE)
 setwd( "~/buckets/b1/exp/lineademuerte/" )
 
