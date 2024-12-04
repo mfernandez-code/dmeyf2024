@@ -203,8 +203,8 @@ FErf_attributes_base <- function( pinputexps, ratio, desvio)
     
     # para que LightGBM emule Random Forest
     boosting = "rf",
-    bagging_fraction = ( 1.0 - 1.0/exp(1.0) ),
-    bagging_freq = 1.0,
+    bagging_fraction = 0.5,
+    bagging_freq = 3.0,
     feature_fraction = 1.0,
     
     # genericos de LightGBM
@@ -222,7 +222,7 @@ FErf_attributes_base <- function( pinputexps, ratio, desvio)
     lambda_l2 = 0.0,
     
     pos_bagging_fraction = 1.0,
-    neg_bagging_fraction = 1.0,
+    neg_bagging_fraction = 0.6,
     is_unbalance = FALSE,
     scale_pos_weight = 1.0,
     
@@ -359,9 +359,9 @@ HT_tuning_semillerio <- function( pinputexps, semillerio, bo_iteraciones, bypass
     num_iterations = 9999L, # un numero muy grande
     early_stopping_base = 200L,
     
-    bagging_fraction = 1.0, # 0.0 < bagging_fraction <= 1.0
+    bagging_fraction = 0.5, # 0.0 < bagging_fraction <= 1.0
     pos_bagging_fraction = 1.0, # 0.0 < pos_bagging_fraction <= 1.0
-    neg_bagging_fraction = 1.0, # 0.0 < neg_bagging_fraction <= 1.0
+    neg_bagging_fraction = 0.6, # 0.0 < neg_bagging_fraction <= 1.0
     is_unbalance = FALSE, #
     scale_pos_weight = 1.0, # scale_pos_weight > 0.0
     

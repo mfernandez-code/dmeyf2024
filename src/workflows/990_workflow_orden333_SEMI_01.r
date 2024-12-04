@@ -313,7 +313,7 @@ TS_strategy_base8 <- function( pinputexps )
 
 
   param_local$train$testing <- c(202107)
-  param_local$train$validation <- c(202107)
+  param_local$train$validation <- c(202106)
 
   param_local$train$training <- c(
     202106, 202105, 202104, 202103, 202102, 202101, 
